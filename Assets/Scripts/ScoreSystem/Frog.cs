@@ -3,8 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Frog : MonoBehaviour
 {
+    public enum FrogType
+    {
+        green
+    }
+
+    public FrogType frogType;
+
     private ScoreManager _scoreManager;
 
     public void Initialize(ScoreManager scoreManager)
@@ -15,11 +23,10 @@ public class Frog : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        _scoreManager.AddScore(1);
+        {
+            _scoreManager.AddScore(1);
+            gameObject.SetActive(false);
+        }
+           
     }
 }

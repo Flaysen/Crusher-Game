@@ -475,9 +475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a6470b59ebb4f4fabc803d34299eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smoothSpeed: 0.02
+  _smoothSpeed: 0
   _height: 6
-  _maxSpeed: 10
+  _maxSpeed: 0
   desiredPosition: {x: 0, y: 0, z: 0}
 --- !u!135 &815233732
 SphereCollider:
@@ -706,6 +706,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 815233730}
   sphereMovement: {fileID: 815233731}
+--- !u!1 &1058594092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058594094}
+  - component: {fileID: 1058594093}
+  m_Layer: 0
+  m_Name: Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1058594093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058594092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee40f067c2497243b1b90fbd76c5c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frogs:
+  - prefab: {fileID: 8020089502827911324, guid: a3e762a13ea6ba14fa9995ca9521dda6,
+      type: 3}
+    amount: 5
+  pooledFrogs: []
+--- !u!4 &1058594094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058594092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1314471744
 PrefabInstance:
   m_ObjectHideFlags: 0

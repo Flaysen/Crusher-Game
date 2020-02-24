@@ -23,13 +23,17 @@ public class FrogSpawner : MonoBehaviour
             Spawn();
         }
     }
-
     private void Spawn()
     {
-        var frog = Instantiate(_frogPrefab, CalculatePosition(), Quaternion.identity);
-        frog.Initialize(_scoreManager);
+        Frog frog = FrogsPool.Instance.Get(Frog.FrogType.green);
+        if(frog)
+        {
+            frog.transform.position = CalculatePosition();
+            frog.gameObject.SetActive(true);
+            frog.Initialize(_scoreManager);
+        }
+           
     }
-
     private Vector3 CalculatePosition()
     {
         float x;
