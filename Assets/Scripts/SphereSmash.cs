@@ -22,7 +22,7 @@ public class SphereSmash : MonoBehaviour
 
     public void AddLiftingVelocity(float liftingSpeed)
     {
-        if (transform.position.y < 3.0f)
+        if (transform.position.y < 6.0f)
             rb.velocity = Vector3.up * liftingSpeed;
         else rb.velocity = Vector3.zero;
     }

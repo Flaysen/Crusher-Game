@@ -16,7 +16,7 @@ public class ReturnState : BaseState
         _controller.SphereSmash.AddLiftingVelocity(
             _controller.SphereSmash._liftingSpeed);
 
-        if (_controller.gameObject.transform.position.y > 3.0f)
+        if (_controller.gameObject.transform.position.y > 6.0f)
             return typeof(MoveState);
 
         return null;

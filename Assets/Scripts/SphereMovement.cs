@@ -5,7 +5,7 @@ using UnityEngine;
 public class SphereMovement : MonoBehaviour
 {
     [SerializeField] private float _smoothSpeed = 0.01f;
-    [SerializeField] private float _height = 3.0f;
+    [SerializeField] private float _height;
     [SerializeField] private float _maxSpeed;
 
     public Vector3 desiredPosition;
