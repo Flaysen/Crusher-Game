@@ -29,6 +29,7 @@ public class FrogSpawner : MonoBehaviour
         if(frog)
         {
             frog.transform.position = CalculatePosition();
+            frog.transform.rotation = new Quaternion(0, 90, 0, 0);
             frog.gameObject.SetActive(true);
             frog.Initialize(_scoreManager);
         }

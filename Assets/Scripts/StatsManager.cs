@@ -31,6 +31,8 @@ public sealed class StatsManager : MonoBehaviour
 
     private int _speed;
 
+    public float Drain = 0.05f;
+
     public void AddPoints(int points) => _score += points;
 
     public void ModifyCombo(int value) => _combo += value;
