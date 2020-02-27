@@ -753,7 +753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1512532923}
   _comboText: {fileID: 523239335}
-  _comboHoldTime: 1.5
+  _timeDrain: {fileID: 2115985251}
+  _comboHoldTime: 2.5
 --- !u!4 &664835550
 Transform:
   m_ObjectHideFlags: 0
@@ -2075,7 +2076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f726c6fc9de55704ead21183f6a84fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frogPrefab: {fileID: -5283230281851227458, guid: dd5fdf094ad095345bc052db3adf1299,
+  _frogPrefab: {fileID: 6492861984983199756, guid: 2bff9cfa5696ba14c87014f59a4511fe,
     type: 3}
   _scoreManager: {fileID: 664835549}
   _respawnRate: 2

@@ -27,6 +27,11 @@ public class TimeDrain : MonoBehaviour
         }
     }
 
+    public void AddTime(int combo)
+    {
+        _slider.value += 0.03f * (1 + combo);
+    }
+
     private void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);

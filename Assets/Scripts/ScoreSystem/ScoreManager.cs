@@ -13,7 +13,9 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _comboText;
 
-    [SerializeField] private float _comboHoldTime = 1.5f;
+    [SerializeField] private TimeDrain _timeDrain;
+
+    [SerializeField] private float _comboHoldTime = 2.5f;
 
     private float _comboResetTime = 0.0f;
 
@@ -34,6 +36,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int amount)
     {
         ResetComboTimer();
+        _timeDrain.AddTime(_combo);
         _score += amount * _combo;
         _combo++;
 
@@ -47,6 +50,7 @@ public class ScoreManager : MonoBehaviour
         formatedScore += actualScore;
         _scoreText.text = formatedScore;
         _comboText.text = _combo.ToString() + "x";
+
     }
 
     public void ResetComboTimer() => _comboResetTime = Time.time + _comboHoldTime;
