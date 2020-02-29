@@ -24,11 +24,11 @@ public class CameraRotation : MonoBehaviour
         float x = 60;
         float y = 0;
         Vector3 direction = (playerPosition - sphereMovement.desiredPosition);
-        if (direction.x > 1) y = -2;
-        else if (direction.x < -1) y = 2;
+        if (direction.x > 1) y = -4;
+        else if (direction.x < -1) y = 4;
         else y = 0;
-        if (direction.z > 1) x = 62;
-        else if (direction.z < -1) x = 58;
+        if (direction.z > 1) x = 64;
+        else if (direction.z < -1) x = 54;
         else x = 60;
         Quaternion desiredRotation = Quaternion.Euler(x, y, 0);
         Quaternion smoothedPosition = Quaternion.Lerp(transform.rotation, desiredRotation, rotationSmooth);

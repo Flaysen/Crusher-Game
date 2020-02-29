@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FrogSpawner : MonoBehaviour
 {
-    [SerializeField] private Frog _frogPrefab;
-
     [SerializeField] private ScoreManager _scoreManager;
 
     [SerializeField] private float _respawnRate;

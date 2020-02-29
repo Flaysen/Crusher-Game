@@ -58,12 +58,13 @@ public class SphereController : MonoBehaviour
 
     private void SphereCollide(Collision collision)
     {
-        _cameraShaker.ShakeOnce(4f, 2f, .1f, 1f);
         if(_stateMachine.CurrentState.GetType() == typeof(SmashState))
         {
             SmashState smash = (SmashState)_stateMachine.CurrentState;
-            smash.TargetTag = collision.gameObject.tag;
+            string tag = collision.gameObject.tag; ;
+            smash.TargetTag = tag;
             IsSmashing = false;
+            if (tag == "Ground") _cameraShaker.ShakeOnce(5f, 2f, .1f, 1f);
         }           
     }
 
