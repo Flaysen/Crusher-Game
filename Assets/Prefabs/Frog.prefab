@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4140532944631684688}
   - component: {fileID: -5283230281851227458}
   m_Layer: 0
-  m_Name: frog 1
+  m_Name: Frog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,8 +62,8 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 4bc8b74ef6308134698ca8241a56ecc6, type: 2}
   - {fileID: 2100000, guid: 4bc8b74ef6308134698ca8241a56ecc6, type: 2}
-  - {fileID: 2100000, guid: 4bc8b74ef6308134698ca8241a56ecc6, type: 2}
-  - {fileID: 2100000, guid: 4bc8b74ef6308134698ca8241a56ecc6, type: 2}
+  - {fileID: 2100000, guid: 3a03ec600a5c9e14b9cab209fd3cd5da, type: 2}
+  - {fileID: 2100000, guid: 2f96520d69ed09d429f5fe619beda338, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
