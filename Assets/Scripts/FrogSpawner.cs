@@ -1,10 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FrogSpawner : MonoBehaviour
 {
     [SerializeField] private ScoreManager _scoreManager;
+
+    [SerializeField] private Radar _radar;
 
     [SerializeField] private float _respawnRate;
 
@@ -15,6 +19,8 @@ public class FrogSpawner : MonoBehaviour
     private Vector3 _frogInitialScale;
 
     private float _nextSpawnTime;
+
+    public Action<GameObject, Image> OnSpawn;
 
     private void Start()
     {
@@ -37,20 +43,23 @@ public class FrogSpawner : MonoBehaviour
         if(frog)
         {
             frog.transform.position = CalculatePosition();
-            frog.transform.rotation = new Quaternion(0,0,0,0);
-            frog.transform.Rotate(Vector3.up, Random.Range(0, 360));
+            //frog.transform.rotation = new Quaternion(0,0,0,0); to delete
+            frog.transform.Rotate(Vector3.up, UnityEngine.Random.Range(0, 360));
             frog.transform.localScale = _frogInitialScale * ( 1 + _sizeVariation);
             frog.gameObject.SetActive(true);
-            frog.Initialize(_scoreManager);
+            frog.InitializeScoreManager(_scoreManager);
+            frog.InitializeRadar(_radar);
+
+            OnSpawn.Invoke(frog.gameObject, frog.Icon);
         }
            
     }
     private Vector3 CalculatePosition()
     {
-        int a = Random.Range(0, 2);
+        int a = UnityEngine.Random.Range(0, 2);
         _spawnPosition = a == 0 ? new
-            Vector3(Random.Range(0, 4) * 6 - 9, 2.0f, Random.Range(-13.0f, 13.0f)) :
-             new Vector3(Random.Range(-13.0f, 13.0f), 2.0f, Random.Range(0, 4) * 6 - 9);
+            Vector3(UnityEngine.Random.Range(0, 4) * 6 - 9, 2.0f, UnityEngine.Random.Range(-13.0f, 13.0f)) :
+             new Vector3(UnityEngine.Random.Range(-13.0f, 13.0f), 2.0f, UnityEngine.Random.Range(0, 4) * 6 - 9);
 
         return _spawnPosition;
     }
