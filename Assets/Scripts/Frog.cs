@@ -48,8 +48,8 @@ public class Frog : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _scoreManager.AddScore(_scoreValue);
+            _radar.RemoveRadarObject(this.gameObject);
             gameObject.SetActive(false);
-        }
-           
+        }          
     }
 }

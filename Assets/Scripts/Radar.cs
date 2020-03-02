@@ -14,7 +14,7 @@ public class Radar : MonoBehaviour
 
     private Transform _playerPos;
 
-    float _mapScale = 5.0f;
+    float _mapScale = 8.0f;
 
     public static List<RadarObject> radObjects = new List<RadarObject>();
 
@@ -65,6 +65,7 @@ public class Radar : MonoBehaviour
             radarPos.z = distToObject * Mathf.Sin(deltay * Mathf.Deg2Rad);
 
             ro.Icon.transform.SetParent(this.transform);
+            ro.Icon.transform.rotation = new Quaternion(0, 0, 0, 0);
             RectTransform rt = this.GetComponent<RectTransform>();
             //Debug.Log(rt.pivot);
             ro.Icon.transform.position = new Vector3(radarPos.x + rt.pivot.x, radarPos.z + rt.pivot.y, 0) + this.transform.position;
