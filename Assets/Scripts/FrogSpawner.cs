@@ -43,12 +43,13 @@ public class FrogSpawner : MonoBehaviour
         if(frog)
         {
             frog.transform.position = CalculatePosition();
-            //frog.transform.rotation = new Quaternion(0,0,0,0); to delete
             frog.transform.Rotate(Vector3.up, UnityEngine.Random.Range(0, 360));
             frog.transform.localScale = _frogInitialScale * ( 1 + _sizeVariation);
             frog.gameObject.SetActive(true);
             frog.InitializeScoreManager(_scoreManager);
             frog.InitializeRadar(_radar);
+
+            SoundManager.PlaySound(SoundManager.Sound.FrogCroak, frog.transform.position);
 
             OnSpawn.Invoke(frog.gameObject, frog.Icon);
         }

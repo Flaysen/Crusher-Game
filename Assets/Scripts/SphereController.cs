@@ -64,7 +64,11 @@ public class SphereController : MonoBehaviour
             string tag = collision.gameObject.tag; ;
             smash.TargetTag = tag;
             IsSmashing = false;
-            if (tag == "Ground") _cameraShaker.ShakeOnce(5f, 2f, .1f, 1f);
+            if (tag == "Ground")
+            {
+                _cameraShaker.ShakeOnce(5f, 2f, .1f, 1f);
+                SoundManager.PlaySound(SoundManager.Sound.Smash);
+            }
         }           
     }
 
