@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9119012749154910596}
   - component: {fileID: 6227645402650229565}
   m_Layer: 0
-  m_Name: GameAssets 1
+  m_Name: GameAssets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,4 +47,6 @@ MonoBehaviour:
   - sound: 0
     audioClip: {fileID: 8300000, guid: 2e18c1355df44fa42bb40f3a8e09756d, type: 3}
   - sound: 1
-    audioClip: {fileID: 8300000, guid: 938b640704ccb7c44833610ae21f0d4e, type: 3}
+    audioClip: {fileID: 8300000, guid: f7bacee1be9c6174d909e121d8fcedc1, type: 3}
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: db41e72edf85b8e4ea4b8663d24cde89, type: 3}

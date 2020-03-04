@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class FrogToPool
+public class ObjectToPool
 {
-    public Frog prefab;
+    public GameObject prefab;
     public int amount;
 }
 
 public class FrogsPool : MonoBehaviour
 {
     public static FrogsPool Instance;
-    public List<FrogToPool> frogs;
+    public List<ObjectToPool> frogs;
     public List<Frog> pooledFrogs;
 
     private void Awake()
@@ -25,13 +25,13 @@ public class FrogsPool : MonoBehaviour
     {
 
         pooledFrogs = new List<Frog>();
-        foreach(FrogToPool item in frogs)
+        foreach(ObjectToPool item in frogs)
         {
             for(int i = 0; i < item.amount; i++)
             {
-                var obj = Instantiate(item.prefab);
+                var obj = Instantiate(item.prefab, transform);
                 obj.gameObject.SetActive(false);
-                pooledFrogs.Add(obj);
+                pooledFrogs.Add(obj.GetComponent<Frog>());
             }
         }
     }

@@ -27,6 +27,7 @@ public class SmashState : BaseState
         if (TargetTag == "Deep")
         {
             TargetTag = null;
+            SoundManager.Instance.PlaySound(SoundManager.Sound.ChainLift);
             return typeof(RenewalState);
         }
       

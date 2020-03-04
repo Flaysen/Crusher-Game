@@ -49,7 +49,7 @@ public class FrogSpawner : MonoBehaviour
             frog.InitializeScoreManager(_scoreManager);
             frog.InitializeRadar(_radar);
 
-            SoundManager.PlaySound(SoundManager.Sound.FrogCroak, frog.transform.position);
+            SoundManager.Instance.PlaySound(SoundManager.Sound.FrogCroak, frog.transform.position);
 
             OnSpawn.Invoke(frog.gameObject, frog.Icon);
         }

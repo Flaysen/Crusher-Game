@@ -67,7 +67,7 @@ public class SphereController : MonoBehaviour
             if (tag == "Ground")
             {
                 _cameraShaker.ShakeOnce(5f, 2f, .1f, 1f);
-                SoundManager.PlaySound(SoundManager.Sound.Smash);
+                SoundManager.Instance.PlaySound(SoundManager.Sound.Smash);
             }
         }           
     }
